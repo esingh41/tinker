@@ -27,3 +27,5 @@ source/*.x
 source/*.make
 source/*-*
 usage
+*.o
+*.lo
