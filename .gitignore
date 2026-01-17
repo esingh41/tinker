@@ -12,7 +12,7 @@ doc/mechanic
 doc/multipoles
 doc/sphinx
 doc/word
-#fftw
+fftw
 lib/linux/*
 !lib/linux/0README
 lib/macos/*
