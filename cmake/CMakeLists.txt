@@ -154,7 +154,7 @@ set(_FILES
     solpot solute sort square stodyn strbnd strtor suffix surface surfatom
     switch syntrn tarray tcgstuf temper tettor tettors titles tncg
     torphase torpot torque tors torsions tortor tree trimtext tritor tritors
-    unionball unitcell units uprior urey urypot usage valfit vdw vdwpot
+    uatom unionball uniquetyp unitcell units uprior urey urypot usage valfit vdw vdwpot
     verlet version vibs virial volume warp xtals xyzatm zatom zclose zcoord
 )
 

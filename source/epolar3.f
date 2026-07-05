@@ -69,6 +69,7 @@ c
       use couple
       use energi
       use extfld
+      use group
       use inform
       use inter
       use iounit
@@ -83,7 +84,7 @@ c
       implicit none
       integer i,j,k
       integer ii,kk,jcell
-      real*8 e,f,scalek
+      real*8 e,f,fgrp,scalek
       real*8 xi,yi,zi
       real*8 xr,yr,zr
       real*8 r,r2,rr3,rr5,rr7
@@ -108,7 +109,7 @@ c
       real*8 dmpi(7),dmpk(7)
       real*8 dmpik(7)
       real*8, allocatable :: pscale(:)
-      logical header,huge
+      logical header,huge,proceed
       character*6 mode
 c
 c
@@ -301,6 +302,12 @@ c
      &                   - dkr*uir*rr5k - dir*ukr*rr5i
      &                   + qkr*uir*rr7k - qir*ukr*rr7i
                end if
+c
+c     scale the interaction based on group membership
+c
+               proceed = .true.
+               if (use_group)  call groups (proceed,fgrp,i,k,0,0,0,0)
+               if (use_group)  e = e * fgrp
 c
 c     increment the overall polarization energy components
 c
